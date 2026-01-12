@@ -11,6 +11,10 @@ class HeroesDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHeroesDetailBinding
 
+    companion object {
+        val EXTRA_HERO = "hero"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
