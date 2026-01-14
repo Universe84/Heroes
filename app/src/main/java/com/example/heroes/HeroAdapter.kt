@@ -10,7 +10,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
 class HeroAdapter {
+
     class HeroAdapter(var heroList: List<Hero>) :
+
+
         RecyclerView.Adapter<HeroAdapter.ViewHolder>() {
 
         /**
@@ -53,10 +56,11 @@ class HeroAdapter {
             viewHolder.textViewName.text = hero.name
             viewHolder.layout.setOnClickListener {
                 val intent = Intent(context, HeroesDetailActivity::class.java)
+                intent.putExtra(HeroesDetailActivity.EXTRA_HERO, hero)
                 Toast.makeText(context, "${hero.name} clicked!", Toast.LENGTH_SHORT).show()
                 context.startActivity(intent)
             }
-            //if need onClick, put here
+
         }
 
         // Return the size of your heroList (invoked by the layout manager)

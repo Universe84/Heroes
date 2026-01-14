@@ -11,7 +11,7 @@ class HeroesDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHeroesDetailBinding
 
-    companion object {
+    companion object{
         val EXTRA_HERO = "hero"
     }
 
@@ -19,10 +19,18 @@ class HeroesDetailActivity : AppCompatActivity() {
 
 
 
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityHeroesDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val hero = intent.getParcelableExtra(EXTRA_HERO) ?: Hero("krill", "krill", "krill", 5, "krill")
+
+        binding.textViewHeroesDetailDescriptionWritten.setText(hero.description)
+        binding.textViewHeroesDetailRankingWritten.setText(hero.ranking.toString())
+        binding.textViewHeroesDetailName.setText(hero.name)
+        binding.textViewHeroesDetailSuperpowerWritten.setText(hero.superpower)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

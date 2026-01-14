@@ -44,5 +44,13 @@ class HeroesListActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView_heroesList)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = customAdapter
+
+        binding.recyclerViewHeroesList.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewHeroesList.adapter
+
+        customAdapter.heroList = customAdapter.heroList.sorted()
+        customAdapter.notifyDataSetChanged()
+
+
     }
 }
