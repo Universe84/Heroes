@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class HeroAdapter {
+
 
     class HeroAdapter(var heroList: List<Hero>) :
 
@@ -67,4 +67,3 @@ class HeroAdapter {
         override fun getItemCount() = heroList.size
 
     }
-}
